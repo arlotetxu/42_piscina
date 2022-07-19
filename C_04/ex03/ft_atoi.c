@@ -1,54 +1,58 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_atoi.c                                          :+:      :+:    :+:   */
+/*   ft_atoi_2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jflorido <jflorido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/18 12:56:54 by jflorido          #+#    #+#             */
-/*   Updated: 2022/07/18 18:06:45 by jflorido         ###   ########.fr       */
+/*   Created: 2022/07/19 12:09:07 by jflorido          #+#    #+#             */
+/*   Updated: 2022/07/19 14:13:36 by jflorido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
 #include<unistd.h>
+#include <stdlib.h>
 
-void check_spaces(char *str)
+int	ft_atoi(char *str)
 {
-	int i;
+	int	i;
+	int	n;
+	int	sign;
 
 	i = 0;
-	while (str[i] != '\0' || (str[i] == '+' || str[i]== '-'))
+	while (str[i] != '\0' && (str[i] == ' ' || str[i] == '\t'
+			|| str[i] == '\n' || str[i] == '\v' || str[i] == '\f'
+			|| str[i] == '\r'))
 	{
-		//printf("He entrado en el bucle");
-		if ((str[i] == ' ' || str[i] == '\t' || str[i] == '\n'
-			|| str[i] == '\v' || str[i] == '\f' || str[i] == '\r'))
-			{
-				//printf("1");
-				i++;
-				//break;	
-			}
-			
-		else break;
+		i++;
 	}
-
-	printf("Fuera del while\n");
-	printf("I: %d\n", i);
+	//printf("El valor de i tras espacios: %d\n", i);
+	sign = 1;
+	while (str[i] != '\0' && (str[i] == '+' || str[i] == '-'))
+	{
+		if (str[i] == '-')
+			sign = sign * (-1);
+		i++;
+	}
+	//printf("El valor de i tras signos: %d\n", i);
+	n = 0;
+	while (str[i] != '\0' && (str[i] >= '0' && str[i] <= '9'))
+	{
+		n = n * 10 + (str[i] - '0');
+		i++;
+	}
+	return (n * sign);
 }
 
 
-/*int	ft_atoi(char *str)
-{
-	int i;
-
-	i = 0;
-	
-
-
-	
-}*/
-
 int main()
 {
-	check_spaces("  a  ---+--+1234ab567");
+	int retorno;
+	int test;
+	retorno = ft_atoi("   c    ---+--+1234ab567");
+	printf("%d", retorno);
+	
+	test = atoi
+	
 }
