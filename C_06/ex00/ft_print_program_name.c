@@ -1,41 +1,27 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr.c                                        :+:      :+:    :+:   */
+/*   ft_print_program_name.c                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jflorido <jflorido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/14 16:26:31 by jflorido          #+#    #+#             */
-/*   Updated: 2022/07/19 17:53:53 by jflorido         ###   ########.fr       */
+/*   Created: 2022/07/19 18:28:46 by jflorido          #+#    #+#             */
+/*   Updated: 2022/07/19 18:54:23 by jflorido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<unistd.h>
 
-void	ft_putchar(char c)
+int	main(int argc, char **argv)
 {
-	write(1, &c, 1);
-}
+	int	i;
 
-void	ft_putnbr(int nb)
-{
-	if (nb < 0)
+	(void) argc;
+	i = 0;
+	while (argv[0][i] != '\0')
 	{
-		ft_putchar('-');
-		nb = nb * (-1);
+		write(1, &argv[0][i], 1);
+		i++;
 	}
-	if (nb == -2147483648)
-		write(1, "2147483648", 12);
-	if (nb >= 0 && nb <= 9)
-		ft_putchar(nb + '0');
-	if (nb > 9)
-	{
-		ft_putnbr(nb / 10);
-		ft_putnbr(nb % 10);
-	}
-}
-
-int	main(void)
-{
-	ft_putnbr(-2147483648);
+	write(1, "\n", 1);
 }
