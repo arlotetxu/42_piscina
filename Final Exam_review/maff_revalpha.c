@@ -1,44 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   maff_revalpha.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jflorido <jflorido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 11:21:46 by jflorido          #+#    #+#             */
-/*   Updated: 2022/07/21 14:14:04 by jflorido         ###   ########.fr       */
+/*   Created: 2022/07/21 08:31:21 by jflorido          #+#    #+#             */
+/*   Updated: 2022/07/21 08:35:08 by jflorido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
 #include<unistd.h>
-char 	*ft_strcpy(char *dest, char *src)
+void	ft_putchar(int i)
 {
-	int j;
-
-	j = 0;
-	while(src[j] != '\0')
-	{
-		dest[j] = src[j];
-		j++;
-	}
-	dest[j] = '\0';
-	return(dest);
+	write(1, &i, 1);
 }
 
 
-int main()
+int	main()
 {
-	char origin[]="Esto es un text";
-	char destiny[] = "hfh";
-	int i;
+	char	c;
+	int		i;
 
-	ft_strcpy(destiny, origin);
-	i = 0;
-	while(destiny[i] != '\0')
+	i = 1;
+	c = 'z';
+	while(c >= 'a')
 	{
-		write(1, &destiny[i], 1);
+		if (i%2 == 0)
+			ft_putchar(c - 32);
+			
+		else
+			ft_putchar(c);
+		
+		c--;
 		i++;
 	}
-	return(0);
+	write(1, "\n", 1);
+	return (0);
 }

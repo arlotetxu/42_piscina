@@ -6,7 +6,7 @@
 /*   By: jflorido <jflorido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/11 11:55:43 by jflorido          #+#    #+#             */
-/*   Updated: 2022/07/18 16:26:43 by jflorido         ###   ########.fr       */
+/*   Updated: 2022/07/20 16:14:33 by jflorido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,8 +34,8 @@ char	*ft_strncpy(char *dest, char *src, unsigned int n)
 
 int main()
 {
-	char origin[]="Esto es un texto";
-	char destiny[] = "_";
+	char origin[]="Es";
+	char destiny[] = "lk";
 	unsigned int n = 4;
 	int i;
 

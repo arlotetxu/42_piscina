@@ -6,7 +6,7 @@
 /*   By: jflorido <jflorido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/07/14 16:26:31 by jflorido          #+#    #+#             */
-/*   Updated: 2022/07/19 17:53:53 by jflorido         ###   ########.fr       */
+/*   Updated: 2022/07/21 12:30:33 by jflorido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,10 +24,13 @@ void	ft_putnbr(int nb)
 		ft_putchar('-');
 		nb = nb * (-1);
 	}
+	
 	if (nb == -2147483648)
 		write(1, "2147483648", 12);
+		
 	if (nb >= 0 && nb <= 9)
 		ft_putchar(nb + '0');
+		
 	if (nb > 9)
 	{
 		ft_putnbr(nb / 10);

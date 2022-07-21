@@ -5,40 +5,35 @@
 /*                                                    +:+ +:+         +:+     */
 /*   By: jflorido <jflorido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 11:21:46 by jflorido          #+#    #+#             */
-/*   Updated: 2022/07/21 14:14:04 by jflorido         ###   ########.fr       */
+/*   Created: 2022/07/21 14:07:54 by jflorido          #+#    #+#             */
+/*   Updated: 2022/07/21 14:22:01 by jflorido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include<stdio.h>
-#include<unistd.h>
-char 	*ft_strcpy(char *dest, char *src)
+
+char	*ft_strcpy(char *s1, char *s2)
 {
-	int j;
+	int	i;
 
-	j = 0;
-	while(src[j] != '\0')
-	{
-		dest[j] = src[j];
-		j++;
-	}
-	dest[j] = '\0';
-	return(dest);
-}
-
-
-int main()
-{
-	char origin[]="Esto es un text";
-	char destiny[] = "hfh";
-	int i;
-
-	ft_strcpy(destiny, origin);
 	i = 0;
-	while(destiny[i] != '\0')
+	while (s2[i] != 0)
 	{
-		write(1, &destiny[i], 1);
+		s1[i] = s2[i];
 		i++;
 	}
-	return(0);
+	s1[i] = '\0';
+	return (s1);
+}
+
+int	main()
+{
+	char	destino[] = "este es el destino";
+	char	origen[] = "a";
+
+	ft_strcpy(destino, origen);
+	
+	printf("Este es el destino: %s", destino);
+	
+	return (0);
 }

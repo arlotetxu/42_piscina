@@ -1,44 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   aff_a.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jflorido <jflorido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 11:21:46 by jflorido          #+#    #+#             */
-/*   Updated: 2022/07/21 14:14:04 by jflorido         ###   ########.fr       */
+/*   Created: 2022/07/20 16:43:58 by jflorido          #+#    #+#             */
+/*   Updated: 2022/07/20 17:28:21 by jflorido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
 #include<unistd.h>
-char 	*ft_strcpy(char *dest, char *src)
+#include<stdio.h>
+
+int	main(int argc, char **argv)
 {
-	int j;
-
-	j = 0;
-	while(src[j] != '\0')
-	{
-		dest[j] = src[j];
-		j++;
-	}
-	dest[j] = '\0';
-	return(dest);
-}
-
-
-int main()
-{
-	char origin[]="Esto es un text";
-	char destiny[] = "hfh";
 	int i;
 
-	ft_strcpy(destiny, origin);
 	i = 0;
-	while(destiny[i] != '\0')
+	//printf("el numero de prametros es: %d\n", argc);
+	if (argc != 2)
+	write(1, "a\n", 1);
+	else
 	{
-		write(1, &destiny[i], 1);
-		i++;
+		while (argv[1][i] != '\0')
+		{
+			if (argv[1][i] == 'a')
+			{
+				write(1, "a", 1);
+				break;
+			}
+			i++;
+		}
 	}
-	return(0);
+	write(1, "\n", 1);
+	return (0);
 }

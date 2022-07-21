@@ -1,44 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   hello.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jflorido <jflorido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 11:21:46 by jflorido          #+#    #+#             */
-/*   Updated: 2022/07/21 14:14:04 by jflorido         ###   ########.fr       */
+/*   Created: 2022/07/20 18:55:03 by jflorido          #+#    #+#             */
+/*   Updated: 2022/07/20 18:57:46 by jflorido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
 #include<unistd.h>
-char 	*ft_strcpy(char *dest, char *src)
+
+int	main()
 {
-	int j;
-
-	j = 0;
-	while(src[j] != '\0')
-	{
-		dest[j] = src[j];
-		j++;
-	}
-	dest[j] = '\0';
-	return(dest);
-}
-
-
-int main()
-{
-	char origin[]="Esto es un text";
-	char destiny[] = "hfh";
-	int i;
-
-	ft_strcpy(destiny, origin);
-	i = 0;
-	while(destiny[i] != '\0')
-	{
-		write(1, &destiny[i], 1);
-		i++;
-	}
-	return(0);
+	write(1, "Hello World!\n", 13);
+	return (0);
 }

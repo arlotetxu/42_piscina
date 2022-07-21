@@ -1,44 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_countdown.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jflorido <jflorido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 11:21:46 by jflorido          #+#    #+#             */
-/*   Updated: 2022/07/21 14:14:04 by jflorido         ###   ########.fr       */
+/*   Created: 2022/07/20 18:27:32 by jflorido          #+#    #+#             */
+/*   Updated: 2022/07/20 18:35:36 by jflorido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
 #include<unistd.h>
-char 	*ft_strcpy(char *dest, char *src)
+
+int	main()
 {
-	int j;
-
-	j = 0;
-	while(src[j] != '\0')
+	char	i;
+	i = '0';
+	while(i <= '9')
 	{
-		dest[j] = src[j];
-		j++;
-	}
-	dest[j] = '\0';
-	return(dest);
-}
-
-
-int main()
-{
-	char origin[]="Esto es un text";
-	char destiny[] = "hfh";
-	int i;
-
-	ft_strcpy(destiny, origin);
-	i = 0;
-	while(destiny[i] != '\0')
-	{
-		write(1, &destiny[i], 1);
+		write(1, &i, 1);
 		i++;
 	}
-	return(0);
+	write(1, "\n", 1);
+	return (0);
 }

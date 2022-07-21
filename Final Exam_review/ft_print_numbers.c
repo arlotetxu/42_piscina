@@ -1,44 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strcpy.c                                        :+:      :+:    :+:   */
+/*   ft_print_numbers.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jflorido <jflorido@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/07/11 11:21:46 by jflorido          #+#    #+#             */
-/*   Updated: 2022/07/21 14:14:04 by jflorido         ###   ########.fr       */
+/*   Created: 2022/07/20 18:41:48 by jflorido          #+#    #+#             */
+/*   Updated: 2022/07/20 18:50:27 by jflorido         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include<stdio.h>
 #include<unistd.h>
-char 	*ft_strcpy(char *dest, char *src)
+
+void	ft_print_numbers(void)
 {
-	int j;
+	char	i;
 
-	j = 0;
-	while(src[j] != '\0')
+	i = '0';
+	while (i <= '9')
 	{
-		dest[j] = src[j];
-		j++;
-	}
-	dest[j] = '\0';
-	return(dest);
-}
-
-
-int main()
-{
-	char origin[]="Esto es un text";
-	char destiny[] = "hfh";
-	int i;
-
-	ft_strcpy(destiny, origin);
-	i = 0;
-	while(destiny[i] != '\0')
-	{
-		write(1, &destiny[i], 1);
+		write(1, &i, 1);
 		i++;
 	}
-	return(0);
+}
+
+int	main()
+{
+	ft_print_numbers();
+	return (0);
 }
